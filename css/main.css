@@ -2,12 +2,16 @@
  * Credits: Brady Wright (https://codepen.io/brady_wright/pen/NNOvrW)
  */
 
+ * {
+  font-family: "Roboto", sans-serif;
+}
+
 body {
-  color: #768390;
+  color: #252525;
   background: #fff;
-  font-family: "Effra", Helvetica, sans-serif;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+  margin-top: 2em;
 }
 h1,
 h2,
@@ -19,11 +23,11 @@ h6 {
   margin-top: 0;
 }
 a {
-  color: #ff6b6b;
+  color: #252525;
 }
 a:hover {
-  color: #ff9a9a;
-  text-decoration: none;
+  color: #252525;
+  text-decoration: underline;
 }
 .example-header {
   background: #3d4351;
@@ -90,13 +94,14 @@ TIMELINE
 }
 /*----- TIMELINE INFO -----*/
 .timeline-info {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 1.1em;
+  font-weight: bolder;
   letter-spacing: 3px;
   margin: 0 0 0.5em 0;
-  text-transform: uppercase;
   white-space: nowrap;
+  text-align: right;
 }
+
 /*----- TIMELINE MARKER -----*/
 .timeline-marker {
   position: absolute;
@@ -106,7 +111,7 @@ TIMELINE
   width: 15px;
 }
 .timeline-marker:before {
-  background: #ff6b6b;
+  background: #006d00;
   border: 3px solid transparent;
   border-radius: 100%;
   content: "";
@@ -133,7 +138,7 @@ TIMELINE
 }
 .timeline-item:not(.period):hover .timeline-marker:before {
   background: transparent;
-  border: 3px solid #ff6b6b;
+  border: 3px solid #006d00;
 }
 /*----- TIMELINE CONTENT -----*/
 .timeline-content {
@@ -176,116 +181,118 @@ TIMELINE
 /*----------------------------------------------
 MOD: TIMELINE SPLIT
 ----------------------------------------------*/
-@media (min-width: 768px) {
-  .timeline-split .timeline,
-  .timeline-centered .timeline {
-    display: table;
-  }
-  .timeline-split .timeline-item,
-  .timeline-centered .timeline-item {
-    display: table-row;
-    padding: 0;
-  }
-  .timeline-split .timeline-info,
-  .timeline-centered .timeline-info,
-  .timeline-split .timeline-marker,
-  .timeline-centered .timeline-marker,
-  .timeline-split .timeline-content,
-  .timeline-centered .timeline-content,
-  .timeline-split .period .timeline-info,
-  .timeline-centered .period .timeline-info {
-    display: table-cell;
-    vertical-align: top;
-  }
-  .timeline-split .timeline-marker,
-  .timeline-centered .timeline-marker {
-    position: relative;
-  }
-  .timeline-split .timeline-content,
-  .timeline-centered .timeline-content {
-    padding-left: 30px;
-  }
-  .timeline-split .timeline-info,
-  .timeline-centered .timeline-info {
-    padding-right: 30px;
-  }
-  .timeline-split .period .timeline-title,
-  .timeline-centered .period .timeline-title {
-    position: relative;
-    left: -45px;
-  }
+.timeline-split .timeline,
+.timeline-centered .timeline {
+  display: table;
 }
-/*----------------------------------------------
-MOD: TIMELINE CENTERED
-----------------------------------------------*/
-@media (min-width: 992px) {
-  .timeline-centered,
-  .timeline-centered .timeline-item,
-  .timeline-centered .timeline-info,
-  .timeline-centered .timeline-marker,
-  .timeline-centered .timeline-content {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-  .timeline-centered .timeline-item {
-    padding-bottom: 40px;
-    overflow: hidden;
-  }
-  .timeline-centered .timeline-marker {
-    position: absolute;
-    left: 50%;
-    margin-left: -7.5px;
-  }
-  .timeline-centered .timeline-info,
-  .timeline-centered .timeline-content {
-    width: 50%;
-  }
-  .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
-    float: left;
-    text-align: right;
-    padding-right: 30px;
-  }
-  .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
-    float: right;
-    text-align: left;
-    padding-left: 30px;
-  }
-  .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
-    float: right;
-    text-align: left;
-    padding-left: 30px;
-  }
-  .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
-    float: left;
-    text-align: right;
-    padding-right: 30px;
-  }
-  .timeline-centered > .timeline-item.period .timeline-content {
-    float: none;
-    padding: 0;
-    width: 100%;
-    text-align: center;
-  }
-  .timeline-centered .timeline-item.period {
-    padding: 50px 0 90px;
-  }
-  .timeline-centered .period .timeline-marker:after {
-    height: 30px;
-    bottom: 0;
-    top: auto;
-  }
-  .timeline-centered .period .timeline-title {
-    left: auto;
-  }
+.timeline-split .timeline-item,
+.timeline-centered .timeline-item {
+  display: table-row;
+  padding: 0;
 }
+.timeline-split .timeline-info,
+.timeline-centered .timeline-info,
+.timeline-split .timeline-marker,
+.timeline-centered .timeline-marker,
+.timeline-split .timeline-content,
+.timeline-centered .timeline-content,
+.timeline-split .period .timeline-info,
+.timeline-centered .period .timeline-info {
+  display: table-cell;
+  vertical-align: top;
+}
+.timeline-split .timeline-marker,
+.timeline-centered .timeline-marker {
+  position: relative;
+}
+.timeline-split .timeline-content,
+.timeline-centered .timeline-content {
+  padding-left: 30px;
+}
+.timeline-split .timeline-info,
+.timeline-centered .timeline-info {
+  padding-right: 30px;
+}
+.timeline-split .period .timeline-title,
+.timeline-centered .period .timeline-title {
+  position: relative;
+  left: -45px;
+}
+
 /*----------------------------------------------
 MOD: MARKER OUTLINE
 ----------------------------------------------*/
 .marker-outline .timeline-marker:before {
   background: transparent;
-  border-color: #ff6b6b;
+  border-color: #003f00;
 }
 .marker-outline .timeline-item:hover .timeline-marker:before {
-  background: #ff6b6b;
+  background: #006d00;
+}
+
+/*----------------------------------------------
+CALENDAR HEADER
+----------------------------------------------*/
+
+.calendar-header {
+  margin-bottom: 3em;
+}
+
+.calendar-header h2,
+.calendar-header strong {
+  font-weight: bolder;
+  color: #212529;
+}
+
+.calendar-header p {
+  margin-bottom: 0px;
+}
+
+.calendar-header div.icon {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.calendar-header div.icon i {
+  font-size: 7em;
+  color: #003f00;
+}
+
+.calendar-header div.description {
+  
+}
+
+.calendar-header div.headline {
+  text-align: right;
+}
+
+.calendar-header div.headline h2 {
+  font-size: 3em;
+  font-weight: bolder;
+}
+
+/*----------------------------------------------
+MONTH START
+----------------------------------------------*/
+
+.month-start div.timeline-content {
+}
+
+/*----------------------------------------------
+MONTH ITEM
+----------------------------------------------*/
+
+.month-item div.timeline-info span {
+  font-size: 2em;
+}
+
+.month-item div.timeline-info span.range {
+  font-size: 1.4em;
+}
+
+.month-item div.timeline-info sub {
+  color: #677481;
+  display: block;
+  margin-top: 0.4em;
+  text-transform: uppercase;
 }

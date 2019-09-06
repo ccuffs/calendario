@@ -31,8 +31,11 @@ var CALENDAR = new function() {
                 
             } else {
                 var eventElement = $('#template-item').clone().show();
+                var isRangeDate = isNaN(item[0]);
+                var complement = item[1] != '' && item[1] != '-' ? item[1] : '';
 
-                eventElement.find('.timeline-info span').html(item[0] + '(' + item[1] + ')');
+                eventElement.find('.timeline-info span').html(item[0]).addClass(isRangeDate ? 'range' : '');
+                eventElement.find('.timeline-info sub').html(complement);
                 eventElement.find('.timeline-content .timeline-title').html(item[2]);
                 eventElement.find('.timeline-content p').html('desc');
                 
