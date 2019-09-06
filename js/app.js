@@ -37,7 +37,7 @@ var CALENDAR = new function() {
                 eventElement.find('.timeline-info span').html(item[0]).addClass(isRangeDate ? 'range' : '');
                 eventElement.find('.timeline-info sub').html(complement);
                 eventElement.find('.timeline-content .timeline-title').html(item[2]);
-                eventElement.find('.timeline-content p').html('desc');
+                eventElement.find('.timeline-content p').html('');
                 
                 eventElement.appendTo(currentMonthElement.find('ul.timeline'));
             }

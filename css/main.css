@@ -98,7 +98,6 @@ TIMELINE
   font-weight: bolder;
   letter-spacing: 3px;
   margin: 0 0 0.5em 0;
-  white-space: nowrap;
   text-align: right;
 }
 
@@ -266,6 +265,10 @@ CALENDAR HEADER
   text-align: right;
 }
 
+.calendar-header div.headline p {
+  line-height: 1em;
+}
+
 .calendar-header div.headline h2 {
   font-size: 3em;
   font-weight: bolder;
@@ -276,6 +279,7 @@ MONTH START
 ----------------------------------------------*/
 
 .month-start div.timeline-content {
+  
 }
 
 .month-start h2.timeline-title {
@@ -286,19 +290,24 @@ MONTH START
 }
 
 .month-start .timeline-item.period {
-  text-align: left;
+  text-align: right;
 }
 
 /*----------------------------------------------
 MONTH ITEM
 ----------------------------------------------*/
 
+.month-item div.timeline-info {
+  width: 25%;
+}
+
 .month-item div.timeline-info span {
   font-size: 2em;
+  overflow-wrap: break-word;
 }
 
 .month-item div.timeline-info span.range {
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 
 .month-item div.timeline-info sub {
@@ -311,4 +320,5 @@ MONTH ITEM
 .month-item h3.timeline-title {
   font-size: 1.5em;
 }
+
 
