@@ -14,10 +14,31 @@ var CALENDAR = new function() {
     this.data = [];
 
     this.render = function() {
-        var aItemTemplate = $('#month-item');
+        var currentMonthElement = null;
 
-        console.log(this.data);
-        console.log(this.header);
+        for(var i = 0; i < this.data.length; i++) {
+            var item = this.data[i];
+            var isNewMonth = item[1] == '' && item[2] == '';
+
+            if (isNewMonth) {
+                var monthName = item[0];
+                var monthElement = $('#template-month').clone().show();
+
+                currentMonthElement = monthElement;
+
+                monthElement.find('.month-start h2').html(monthName);
+                monthElement.appendTo('#container');
+                
+            } else {
+                var eventElement = $('#template-item').clone().show();
+
+                eventElement.find('.timeline-info span').html(item[0] + '(' + item[1] + ')');
+                eventElement.find('.timeline-content .timeline-title').html(item[2]);
+                eventElement.find('.timeline-content p').html('desc');
+                
+                eventElement.appendTo(currentMonthElement.find('ul.timeline'));
+            }
+        }
     };
 
     this.organizeData = function(results) {
